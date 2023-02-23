@@ -264,6 +264,15 @@ if __name__ == "__main__":
     Have a great day ahead !!!
     """
     }
+
+    username = "tusharkolekar24@gmail.com"
+    password = "T@24041996"
+    query = "talent acquisition data science, India"
+    personalized_note = f"""
+    I noticed that you are a recruiter. I’m a Data Scientist with 3+ years Experience and currently seeking new opportunities. 
+    I’d love to find out if I may be a fit for any of your current openings, 
+    and I’d also be happy to connect you with other professionals in my field
+    """
     driver = initializer(**trupti_details)
     driver.open_linkedin()
     driver.login()
