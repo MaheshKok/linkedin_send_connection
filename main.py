@@ -165,18 +165,21 @@ I’d love to connect with you for future opportunities and I am more than happy
                         # Click Send Now
                         self.click_element(send_ele)
                         print(f"sent connection to {recruiter_name}")
-                        print("total requests sent: ", count)
+
                         print("sleep", end=" ")
                         _sleep = 1
-                        while _sleep < 30:
+                        while _sleep < 10:
                             try:
                                 self.driver.find_element(by=By.CLASS_NAME, value='artdeco-toast-item__content')
+                                self.get_elements(by=By.XPATH, value="//div[@data-test-artdeco-toast-item-type='error']/button")[0].click()
+                                time.sleep(1)
                                 break
                             except:
                                 time.sleep(1)
                                 print(_sleep, end=" ")
                                 _sleep += 1
                         else:
+                            print("total requests sent: ", count)
                             count = count + 1
                         print()
                     else:
@@ -246,7 +249,7 @@ if __name__ == "__main__":
     mahesh_details = {
         "username": "maheshkokare100@gmail.com",
         "password": "MAHkok@100",
-        "query": "python headhunter",
+        "query": "Engineering consultant",
         "personalized_note": f"""
     I noticed that you are a recruiter. 
     I’m a Software Engineer with 8+ years Experience. 
